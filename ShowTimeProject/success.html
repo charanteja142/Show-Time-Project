@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Confirmed</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      padding: 0px;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: green;
+    }
+    .details {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .details img {
+      width: 150px;
+      border-radius: 8px;
+    }
+    .info {
+      font-size: 16px;
+    }
+    .info p {
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>✅ Booking Confirmed!</h2>
+  <div class="details">
+   <img id="moviePoster" src="" alt="Movie Poster" style="width:200px;">
+    <div class="info">
+      <p><strong>Movie:</strong> <span id="movieTitle"></span></p>
+      <p><strong>Date:</strong> <span id="movieDate"></span></p>
+      <p><strong>Time:</strong> <span id="movieTime"></span></p>
+      <p><strong>Seats:</strong> <span id="selectedSeats"></span></p>
+      <p><strong>Theatre:</strong> ShowTime Cinemas</p>
+      <p><strong>Total Price:</strong> ₹<span id="totalPrice"></span></p>
+    </div>
+  </div>
+  <a href="showtime.html" class="btn btn-success" style="margin-left: 490px;">Home</a>
+</div>
+
+
+
+<script>
+  let url = new URL(window.location.href);
+
+  let title = url.searchParams.get("title");
+  let image = url.searchParams.get("image");
+  let date = url.searchParams.get("date");
+  let time = url.searchParams.get("time");
+  let seats = url.searchParams.get("seats");
+  let price = url.searchParams.get("price");
+
+  document.getElementById("movieTitle").innerText = title;
+  document.getElementById("movieDate").innerText = date;
+  document.getElementById("movieTime").innerText = time;
+  document.getElementById("selectedSeats").innerText = seats;
+  document.getElementById("totalPrice").innerText = price;
+
+  if (image) {
+    document.getElementById("moviePoster").src = image;
+  } else {
+    document.getElementById("moviePoster").style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

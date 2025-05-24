@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Time</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="book my show.css">
+</head>
+<body>
+    <style>
+        #nav0
+        {
+          
+           padding-bottom: 80px;
+        }
+        
+        .nav-background
+        {
+           background-repeat: no-repeat;
+           background-position:right center;
+           background-size:cover ;
+    
+        }
+
+
+        #img
+        {
+            padding-left: 180px;
+            padding-top: 30px; 
+        }
+
+        #movie-title
+        {
+            padding-right: 500px;
+            padding-top: 60px;
+            font-size:large;
+            
+        }
+
+
+        #timing
+        {
+            width: 1300px;
+            padding-right: 800px;
+        }
+
+         #movie-details
+        {
+            width: 690px;
+            padding-right: 200px;
+            margin-top: 10px;
+        }
+
+         #btns
+        {
+            margin-left: 0px;
+            margin-right: 100px;
+            width: 100px;
+            margin-top: 0px;
+        }
+
+         .about
+        {
+            padding-right: 1300px;
+            padding-top: 70px;
+            font-size: larger;
+        }
+
+
+    
+    </style>
+    
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container" id="nav1">
+            <span id="texts">
+                <a class="navbar-brand" href="#"> <img src="logof.jpg" alt="" style="width: 150px; height: 40px;"></a>
+                <input type="text" placeholder="Search For Movies,Events,Plays,Sports,Activities"  id="searchbar">
+            </span>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- city selection -->
+             
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <select name="options" id="opt">
+                            <option>Chennai</option>
+                            <option>Nellore</option>
+                            <option>Ongole</option>
+                            <option>Bangalore</option>
+                            <option>Ahemdabad</option>
+                            <option>Delhi</option>
+                        </select>
+                    </div>
+                    space
+                    <li class="nav-item"><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#signup">Sign In</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- nav bar 2-->
+
+    <nav class="nav2" style="background-color: darkgray;">
+        <a href="showtime.html">Movies</a>
+        <a href="streaming website.html">Stream</a>
+    </nav>
+
+    <!-- signup form -->
+    <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="signupLabel" aria-hidden="true" width="30px">
+        <div class="modal-dialog modal-dialog-centered" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupLabel">Get Started</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <button class="btn btn-light w-50 mb-2"> <img src="https://img.icons8.com/color/16/000000/google-logo.png">Continue with Google</button> <br>
+                    <button class="btn btn-light w-50 mb-2"> <img src="https://img.icons8.com/ios/16/000000/new-post.png"> Continue with Email</button><br>
+                    <button class="btn btn-light w-50 mb-2"> <img src="https://img.icons8.com/ios-filled/16/000000/mac-os.png"> Continue with Apple</button><br><br>
+                    <hr><br>
+                    <h4>login with mobile number</h4>
+                    <div class="mb-3">
+                        <div class="input-group">
+                        <span class="input-group-text" id="countryCode">+91</span>
+                        <input type="number" class="form-control" id="mobile" placeholder="Enter your number">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Send OTP</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+<!--movies section-->
+       
+<div class="row" id="nav0">
+    <div class="col-md-5 mt-5">
+        <img id="movie-img" src="" alt="Movie Image" style="width: 200px;">
+    </div>
+    
+    <div class="col-md-5 mt-5" id="movie-title" data-bs-toggle="background image">
+        <strong id="movie-name"></strong><br>
+        <p id="movie-details">2h 35m • Drama , Thriller • UA16+ • 21 Feb, 2025</p>
+        <button class="btn btn-primary book-btn" onclick="seatselection()" id="btns">Book Now</button>
+        
+    </div>
+</div>
+
+<!--about movie-->
+
+    <p class="about"> <strong>About</strong></p>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eveniet magni maxime nostrum suscipit officia, itaque totam tempora ducimus dignissimos laudantium voluptas ab, recusandae reprehenderit fugit quos. Quisquam.</div>
+    <!-- Seat Selection Modal -->
+    <div class="modal fade" id="seatSelectionModal" aria-labelledby="seatSelectionModalLabel">
+        <div class="modal-dialog modal-l">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Select Your Seats</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="margin: 0px;">
+                    <p style="background-color: rgb(126, 109, 142); "><strong>Movie:</strong> <span id="movieName"></span></p>
+                    
+                    <h4 style="text-align: left; color: aqua; background-color: rgb(24, 81, 130); width: 140px; border-radius: 23px;">Select Date:</h4>
+                    <div class="date-container" id="dateContainer"></div>
+                    <p>Selected Date: <span id="selectedDate">None</span></p>
+
+                    <div class="showtime-buttons">
+                        <button class="btn btn-outline-primary" onclick="selectShowtime('6:30 AM')">6:30 AM</button>
+                        <button class="btn btn-outline-success" onclick="selectShowtime('6:30 PM')">6:30 PM</button>
+                    </div>
+
+                    <p style="background-color: aqua; width: 200px; border-radius: 12px;">
+                        <strong>Showtime:</strong> <span id="selectedShowtime">Not Selected</span>
+                    </p>
+
+                    <div><img src="Screen.png" alt="">
+                        <div class="seat-container text-center " id="seatContainer"></div>
+                    
+                        <p>Selected Seats: <span id="selected-seats">0</span></p>
+                        <p>Total Price: ₹<span id="total-price">0</span></p>
+                        <button class="btn btn-success" onclick="confirmBooking()">Confirm Booking</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bookmyshow.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () 
+        {
+         const params = new URLSearchParams(window.location.search);
+         const title = params.get("title");
+         const image = params.get("image");
+         const details = params.get("details");
+
+         if (title && image && details){
+            document.getElementById("movie-name").innerText = title;
+            document.getElementById("movie-img").src = image;
+            document.getElementById("movie-details").innerText = details;
+
+        }});
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Show time</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="book my show.css">
+    </head>
+    <body>
+    
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container" id="nav1">
+                <span id="texts">
+                    <a class="navbar-brand" href="#"> <img src="logof.jpg" alt="" style="width: 150px; height: 40px;"></a>
+                    <input type="text" placeholder="Search For Movies,Events,Plays,Sports,Activities"  id="searchbar">
+                </span>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- city selection -->
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <select name="options" id="opt">
+                                <option>Chennai</option>
+                                <option>Nellore</option>
+                                <option>Ongole</option>
+                                <option>Bangalore</option>
+                                <option>Ahemdabad</option>
+                                <option>Delhi</option>
+                            </select>
+                        </div>
+                        space
+                        <li class="nav-item"><button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#signup">Sign In</button>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- nav bar 2-->
+
+        <nav class="nav2" style="background-color: darkgray;">
+            <a href="book my show .html">Movies</a>
+            <a href="streaming website.html">Stream</a>
+         </nav>
+
+     <!-- signup form -->
+        <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="signupLabel" aria-hidden="true" width="30px">
+            <div class="modal-dialog modal-dialog-centered" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                     <h5 class="modal-title" id="signupLabel">Get Started</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <button class="btn btn-light w-50 mb-2"> <img src="https://img.icons8.com/color/16/000000/google-logo.png">Continue with Google</button> <br>
+                        <button class="btn btn-light w-50 mb-2"> <img src="https://img.icons8.com/ios/16/000000/new-post.png"> Continue with Email</button><br>
+                        <button class="btn btn-light w-50 mb-2"> <img src="https://img.icons8.com/ios-filled/16/000000/mac-os.png"> Continue with Apple</button><br><br>
+                        <hr><br>
+                        <h4>login with mobile number</h4>
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <span class="input-group-text" id="countryCode">+91</span>
+                                <input type="number" class="form-control" id="mobile" placeholder="Enter your number">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Send OTP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    
+        <div class="carousel-container">
+            <div id="customCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="offers.jpg" alt="Image 1" style="width: 1800px; height: 390px; border-radius: 30px;">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="img.avif" alt="Image 2" style="width: 1800px; height: 390px; border-radius: 30px;">
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--movie section-->
+        <div class="header1">Recommended Movies</div>
+        <div class="movie-slider-container">
+            <button id="scrollLeft" class="scroll-btn">&lt;</button>
+            <div id="movieContainer" class="movie-container">
+
+                <div class="movie-card" onclick="openMovieDetails('Next Nuvey', '2.jpg', '2h 05m • Comedy , Drama , Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="2.jpg" alt="">
+                    <h4>Next Nuvey</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Radha', '3.jpeg', '2h 35m • Comedy , Drama , Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="3.jpeg" alt="Akasamlo Oka Tara">
+                    <h4>Radha</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Joker', 'premier2.jpg', '2h 35m  Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="premier2.jpg" alt="">
+                    <h4>Joker</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Star Wars', 'premier3.jpeg', '2h 35m • Drama , Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="premier3.jpeg" alt="">
+                    <h4>Star wars</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Akasamlo Oka Tara', '1.jpeg', '2h 35m • Comedy , Drama , Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="1.jpeg" alt="">
+                    <h4>Akasamlo Oka Tara</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Alien', 'premier5.jpg', '2h 05m • Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="premier5.jpg" alt="">
+                    <h4>Alien</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('the Creator', 'premier3.jpeg', '2h 35m • Drama , Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="premier3.jpg" alt="">
+                    <h4>The Creator</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('joker', 'premier2.jpeg', '2h 35m  Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="premier2.jpg" alt="">
+                    <h4>Joker</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Star Wars', 'premier3.jpeg', '2h 35m • Comedy , Drama , Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="premier3.jpeg" alt="Akasamlo Oka Tara">
+                    <h4>Star Wars</h4>
+                </div>
+            </div>
+            <button id="scrollRight" class="scroll-btn">&gt;</button>
+        </div> <br>
+
+        <div class="header1">Superhit movies</div>
+        <div class="movie-slider-container">
+            <div id="movieContainer" class="movie-container">
+
+                <div class="movie-card" onclick="openMovieDetails('Akasamlo Oka Tara', '1.jpeg', '2h 35m • Comedy , Drama , Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="1.jpeg" alt="Akasamlo Oka Tara">
+                    <h4>Akasamlo Oka Tara</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Next Nuvey', '2.jpg', '2h 05m • Comedy , Drama , Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="2.jpg" alt="">
+                    <h4>Next Nuvey</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Radha', '3.jpeg', '2h 35m • Comedy , Drama , Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="3.jpeg" alt="Akasamlo Oka Tara">
+                    <h4>Radha</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Joker', 'premier2.jpg', '2h 35m  Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="premier2.jpg" alt="">
+                    <h4>Joker</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Star Wars', 'premier3.jpeg', '2h 35m • Drama , Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="premier3.jpeg" alt="">
+                    <h4>Star wars</h4>
+                </div>
+            </div>
+        </div> <br><br>
+
+        <div class="header1">Marvels</div>
+        <div class="movie-slider-container">
+            <div id="movieContainer" class="movie-container">
+
+                <div class="movie-card" onclick="openMovieDetails('Akasamlo Oka Tara', '1.jpeg', '2h 35m • Comedy , Drama , Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="1.jpeg" alt="Akasamlo Oka Tara">
+                    <h4>Akasamlo Oka Tara</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Next Nuvey', '2.jpg', '2h 05m • Comedy , Drama , Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="2.jpg" alt="">
+                    <h4>Next Nuvey</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Shang-Chi', 'Shang chi.jpg', '2h 35m • action , Thriller  • 21 Feb, 2025')">
+                    <img src="shang chi.jpg" alt="">
+                    <h4>Shang-Chi</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('ironman', 'ironman.jpg', '2h 35m  Action • UA16+ • 21 Feb, 2025')">
+                    <img src="ironman.jpg" alt="">
+                    <h4>Iron Man</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Docotr Strange', 'docotr strange.jpg', '2h 35m • sci-fi , Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="docotr strange.jpg" alt="">
+                    <h4>Doctor strange</h4>
+                </div>
+            </div>
+        </div>
+
+        <!--nav 4 container-->
+        <div class="nav4">
+            <div class="container">
+                <img src="card offer.jpg" alt="" style="border-radius: 30px; width: 1000px; height: 80px;">
+            </div>
+        </div>
+        <div class="movie-section">
+            <h2 id="pre"><span><img src="play button.png" alt="" id="play"></span>Premieres</h2>
+            <p id="prs">Watch new movies at home, every Friday</p>
+
+            <!--priemer movie section-->
+
+            <div class="movies-container">
+                <!-- Movie 1 -->
+                <div class="movie-cards">
+                    <div class="flip-box">
+                        <div class="front">
+                            <img src="premiermovies.jpg" alt="Movie 1">
+                            <p class="movieinner">Premier</p>
+                        </div>
+                        <div class="back" style="background-color: rgb(203, 182, 210);">
+                            <h3 style="color: aqua; text-shadow: 3px 3px 3px rgb(223, 226, 226);">Blue Beetle</h3>
+                            <p style="color: rgb(255, 49, 49);">A young man finds an alien scarab that gives him superpowers.</p>
+                            <div class="release-soon" style="background-color: rgb(138, 123, 117);">Releasing Soon</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Movie 2 -->
+                <div class="movie-cards">
+                    <div class="flip-box">
+                        <div class="front">
+                            <img src="premier2.jpg" alt="Movie 2">
+                            <p class="movieinner">Premier</p>
+                        </div>
+                        <div class="back" style="background-color: rgb(203, 182, 210);">
+                            <h3 style="color: aqua; text-shadow: 3px 3px 3px rgb(223, 226, 226);">Joker</h3>
+                            <p style="color: rgb(255, 49, 49);">The story of a failed comedian turning into Gotham's biggest villain.</p>
+                            <div class="release-soon" style="background-color: rgb(138, 123, 117);">Releasing Soon</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Movie 3 -->
+                <div class="movie-cards">
+                    <div class="flip-box">
+                        <div class="front">
+                            <img src="premier3.jpeg" alt="Movie 3">
+                            <p class="movieinner">Premier</p>
+                        </div>
+                        <div class="back" style="background-color: rgb(203, 182, 210);">
+                            <h3 style="color: aqua; text-shadow: 3px 3px 3px rgb(223, 226, 226);">Star Wars</h3>
+                            <p style="color: rgb(255, 49, 49);">A battle between the Jedi and the Sith in a galaxy far, far away.</p>
+                            <div class="release-soon" style="background-color: rgb(138, 123, 117);">Releasing Soon</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Movie 4 -->
+                <div class="movie-cards">
+                    <div class="flip-box">
+                        <div class="front">
+                            <img src="premier3.jpg" alt="Movie 4">
+                            <p class="movieinner">Premier</p>
+                        </div>
+                        <div class="back" style="background-color: rgb(203, 182, 210);">
+                            <h3 style="color: aqua; text-shadow: 3px 3px 3px rgb(223, 226, 226);">The Creator</h3>
+                            <p style="color: rgb(255, 49, 49);">A futuristic war between humans and AI-controlled technology.</p>
+                            <div class="release-soon" style="background-color: rgb(138, 123, 117);">Releasing Soon</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Movie 5 -->
+                <div class="movie-cards">
+                    <div class="flip-box">
+                        <div class="front">
+                            <img src="premier5.jpg" alt="Movie 5">
+                            <p class="movieinner">Premier</p>
+                        </div>
+                        <div class="back" style="background-color: rgb(203, 182, 210);">
+                            <h3 style="color: aqua; text-shadow: 3px 3px 3px rgb(223, 226, 226);">Alien</h3>
+                            <p style="color: rgb(255, 49, 49);">A crew encounters a deadly extraterrestrial creature in space.</p>
+                            <div class="release-soon" style="background-color: rgb(138, 123, 117);">Releasing Soon</div>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+        </div><br><br><br>
+
+
+        <div class="header1">Sci-Fi Movies</div>
+        <div class="movie-slider-container">
+           
+            <div id="movieContainer" class="movie-container">
+
+                <div class="movie-card" onclick="openMovieDetails('captain america', 'captain america.jpg', '2h 35m • Sci-Fic , Drama , Action • UA16+ • 21 Feb, 2025')">
+                    <img src="captain america.jpg" alt="">
+                    <h4>Captain America</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Moon Knight', 'moonknight.jpg', '2h 05m • Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="moonknight.jpg" alt="">
+                    <h4>Moon Knight</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Black Widow', 'blakcwidow.jpg', '2h 35m • Action • UA16+ • 21 Feb, 2025')">
+                    <img src="blackwidow.jpg" alt="">
+                    <h4>Black Widow</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Avengers', 'avengers.jpg', '2h 35m , Sci-Fic, Thriller • UA16+ • 21 Feb, 2025')">
+                    <img src="avengers.jpg" alt="">
+                    <h4>Avengers</h4>
+                </div>
+
+                <div class="movie-card" onclick="openMovieDetails('Ant Man', 'antman.jpg', '2h 35m • Drama, • UA16+ • 21 Feb, 2025')">
+                    <img src="antman.jpg" alt="Akasamlo Oka Tara">
+                    <h4>Antman</h4>
+                </div>
+            </div>
+        </div> <br><br>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row ">
+                    <div class="col-md-4">
+                        <h5>Contact Us</h5>
+                        <p><i class=""></i> Chat with Us</p>
+                        <p><i class=""></i> support@showtime.com</p>
+                        <p><i class=""></i> 123, Movie Street, India</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>Quick Links</h5>
+                        <p><a href="#">About Us</a></p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>Follow Us</h5>
+                        <a href="#" class=""><i class="bi bi-facebook"></i></a>
+                        <a href="#" class=""><i class="bi bi-twitter"></i></a>
+                        <a href="#" class=""><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="bookmyshow.js"></script>
+    </body>
+</html>
